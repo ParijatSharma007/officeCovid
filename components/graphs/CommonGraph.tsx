@@ -1,9 +1,8 @@
 import { Box } from '@mui/material'
 import dynamic from 'next/dynamic'
 import React, { memo } from 'react'
-import { ApexOptions } from 'apexcharts';
-
-const Chart = dynamic(import("react-apexcharts"), {ssr : false})
+import { ApexOptions } from 'apexcharts'
+const Chart = dynamic(() => import("react-apexcharts"), {ssr : false})
 
 interface Graph {
     xAxis : string[],

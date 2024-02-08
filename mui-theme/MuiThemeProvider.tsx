@@ -10,6 +10,11 @@ import { MuiThemeOptions } from "./_muiTheme";
 import { PaletteMode } from "@mui/material";
 
 
+export function getInitialProps(context : any){
+
+  console.log(context);
+}
+
 
 // Mui theme set up provider for whole application
 export const MuiThemeContext = createContext({})
@@ -18,12 +23,12 @@ const MuiThemeProvider = ({ children }: { children: React.ReactNode }) => {
 
   var settedTheme : any = 'dark'
 
-  if (typeof window !== "undefined") {
-    if(window.localStorage.getItem('theme')){
-      settedTheme = window.localStorage.getItem('theme')
-      console.log(settedTheme);
-    }
-  }
+  // if (typeof window !== "undefined") {
+  //   if(window.localStorage.getItem('theme')){
+  //     settedTheme = window.localStorage.getItem('theme')
+  //     console.log(settedTheme);
+  //   }
+  // }
 
   const [mode, setMode] = useState<PaletteMode>(settedTheme)
 

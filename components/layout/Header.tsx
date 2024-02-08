@@ -9,20 +9,23 @@ import { MuiThemeContext } from '@/mui-theme/MuiThemeProvider';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
 export default function Header() {
+
   const {mode, setMode} = React.useContext<any>(MuiThemeContext)
   const changeTheme = () => {
-    setMode(() => {
-      if (typeof window !== "undefined"){
-        if(mode === 'light'){
-          window.localStorage.setItem('theme', 'dark')
-          return 'dark'
+    React.useEffect(() => {
+      setMode(() => {
+        if (typeof window !== "undefined"){
+          if(mode === 'light'){
+            window.localStorage.setItem('theme', 'dark')
+            return 'dark'
+          }
+          if(mode === 'dark'){
+            window.localStorage.setItem('theme', 'light')
+            return 'light'
+          }
         }
-        if(mode === 'dark'){
-          window.localStorage.setItem('theme', 'light')
-          return 'light'
-        }
-      }
-    })
+      })
+    }, [])
   }
   return (
     <Box sx={{ flexGrow: 1 , boxShadow : "0px"}}>

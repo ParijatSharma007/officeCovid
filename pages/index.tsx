@@ -1,4 +1,3 @@
-import Wrapper from '@/components/layout/Wrapper'
 import { Box, Typography } from '@mui/material'
 import React, { useEffect, useMemo, useState, useTransition } from 'react'
 import FlexingOverView from '@/components/overview/FlexingOverView'
@@ -7,7 +6,8 @@ import { getGlobalUpdate } from '@/api/apiCalls/apiCalls'
 import { totalNumbers } from '@/components/data-mutation/totalNumbers'
 import { ITotalNumbers, IcountryWiseChartData, TotalNumbers } from '@/interfaces/interfaces'
 import { chartDataMutation } from '@/components/data-mutation/chartDataMutation'
-const CommonGraph = dynamic(import('@/components/graphs/CommonGraph'), { ssr: false })
+const CommonGraph = dynamic(() => import('@/components/graphs/CommonGraph'), { ssr: false })
+const Wrapper = dynamic(() => import('@/components/layout/Wrapper'), {ssr : false})
 import Selecter from '@/components/selecter/Selecter'
 import dynamic from 'next/dynamic'
 import eventEmitter, { events } from '@/services/eventEmitter'
