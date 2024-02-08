@@ -1,0 +1,35 @@
+.activecase{
+    height: auto;
+    width: auto;
+    border: "6px";
+    border-radius: "10%";
+    padding: "20px";
+}
+
+.recovered {
+    height: auto;
+    width: auto;
+    border: "6px";
+    border-radius: "10%";
+    padding: "20px";
+}
+
+.died{
+    height: auto;
+    width: auto;
+    border: "6px";
+    border-radius: "10%";
+    padding: "20px";
+}
+
+.activecase :hover {
+    border-color: "#FC5F3D";
+}
+
+.recovered :hover {
+    border-color: "#5AFC3D";
+}
+
+.died :hover {
+    border-color: "#FD0000";
+}
