@@ -157,7 +157,10 @@ const Home = ({ totalNumbers, countryWiseChartData, totalNumbesofCountry }: DATA
           />
         </Box>
       </Box>
-      <Box display={'flex'} flexDirection={'row'}>
+      <Box display={'flex'} flexDirection={'row'} sx={{
+        justifyContent : 'center',
+        alignItems : 'center'
+      }}>
         <Box display={'flex'} flexDirection={'column'}>
           <Typography variant='h3' textAlign={'center'}>Total deceased : {countryTotalNumbers.totalDeceased}</Typography>
           <CommonGraph
