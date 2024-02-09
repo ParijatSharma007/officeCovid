@@ -8,11 +8,11 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { MuiThemeContext } from '@/mui-theme/MuiThemeProvider';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
+
 export default function Header() {
 
   const {mode, setMode} = React.useContext<any>(MuiThemeContext)
   const changeTheme = () => {
-    React.useEffect(() => {
       setMode(() => {
         if (typeof window !== "undefined"){
           if(mode === 'light'){
@@ -25,8 +25,7 @@ export default function Header() {
           }
         }
       })
-    }, [])
-  }
+    }
   return (
     <Box sx={{ flexGrow: 1 , boxShadow : "0px"}}>
       <AppBar position="static" sx={{backgroundColor : "white", boxShadow : "0px"}}>
