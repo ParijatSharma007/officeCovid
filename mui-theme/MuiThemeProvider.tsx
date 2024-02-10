@@ -23,12 +23,12 @@ const MuiThemeProvider = ({ children }: { children: React.ReactNode }) => {
 
   var settedTheme : any = 'dark'
 
-  // if (typeof window !== "undefined") {
-  //   if(window.localStorage.getItem('theme')){
-  //     settedTheme = window.localStorage.getItem('theme')
-  //     console.log(settedTheme);
-  //   }
-  // }
+  if (typeof window !== "undefined") {
+    if(window.localStorage.getItem('theme')){
+      settedTheme = window.localStorage.getItem('theme')
+      console.log(settedTheme);
+    }
+  }
 
   const [mode, setMode] = useState<PaletteMode>(settedTheme)
 

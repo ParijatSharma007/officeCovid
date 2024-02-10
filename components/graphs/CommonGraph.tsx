@@ -7,7 +7,8 @@ const Chart = dynamic(() => import("react-apexcharts"), {ssr : false})
 interface Graph {
     xAxis : string[],
     yAxis : number[],
-    color : string[]
+    color : string[],
+    title : string
 }
 interface ISeries
 {
@@ -20,29 +21,46 @@ interface IState{
   series : ISeries[]
 }
 
-const CommonGraph = ({xAxis, yAxis, color} : Graph) => {
+const CommonGraph = ({xAxis, yAxis, color, title} : Graph) => {
 
-    const state:IState = {
-        options: {
-          chart: {
-            id: "basic-bar"
-          },
-          
-          xaxis: {
-            categories: xAxis
-          },
-  
-          fill:{
-            colors:color
-          }
+    const state: IState = {
+      options: {
+        chart: {
+          id: "basic-bar",
         },
-        series: [
-          {
-            name: "-Dates-",
-            data: yAxis
-          }
-        ]
-      };
+
+        xaxis: {
+          categories: xAxis,
+          labels: {
+            show: false,
+          },
+        },
+
+        colors: color,
+        fill: {
+          type: "gradient",
+          gradient: {
+            shade: "light",
+          },
+        },
+        markers: {
+          size: [0],
+        },
+        stroke: {
+          curve: "smooth",
+          width : 1
+        },
+        dataLabels: {
+          enabled: false,
+        },
+      },
+      series: [
+        {
+          name: title,
+          data: yAxis,
+        },
+      ],
+    };
   return (
     <Box padding={"30px"}>
          <Chart

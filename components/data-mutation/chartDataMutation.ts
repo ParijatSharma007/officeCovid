@@ -1,5 +1,4 @@
-import { ICountry, IcountryWiseChartData, verient } from "@/interfaces/interfaces"
-import { Data } from "@/interfaces/interfaces"
+import { IcountryWiseChartData, verient } from "@/interfaces/interfaces"
 
 
 export const chartDataMutation = (key: keyof verient, obj: verient, chartObj: IcountryWiseChartData, chartObjKey: string) => {

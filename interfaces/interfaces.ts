@@ -75,3 +75,18 @@ export interface ITotalNumbers {
         totalConfirmed : number
     }
 }
+
+export interface ISingleDate{
+    date : string,
+    confirmed: number,
+    recovered: number,
+    tested: number,
+    deceased: number,
+    vaccinated1: number,
+    vaccinated2: number,
+
+}
+
+export interface IDataTable {
+    [key : string] : ISingleDate[]
+}
